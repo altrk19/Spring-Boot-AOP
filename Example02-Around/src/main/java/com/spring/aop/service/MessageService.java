@@ -6,11 +6,15 @@ import org.springframework.stereotype.Service;
 public class MessageService {
 
     public String printMessage(String param) {
-
+        method("param test");
         return param;
     }
 
-    public void method(String parameter1){
+    public void voidMethod(String param) {
+        System.out.println("hello");
+    }
+
+    private void method(String parameter1){
         System.out.println(parameter1);
     }
 }

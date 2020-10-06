@@ -15,10 +15,15 @@ public class Controller {
     @Autowired
     private MessageService messageService;
 
-    @PostMapping
+    @PostMapping("/v1")
     public ResponseEntity<String> method(@RequestBody String message) {
-        messageService.method("param test");
         return ResponseEntity.ok(messageService.printMessage(message));
+    }
+
+    @PostMapping("/v2")
+    public ResponseEntity<String> voidmethod(@RequestBody String message) {
+        messageService.voidMethod(message);
+        return ResponseEntity.ok("success");
     }
 }
 //POST localhost:8080/message
